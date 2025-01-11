@@ -1,6 +1,6 @@
 import { ThemeProvider, AppLayout } from "ui";
 import { Nunito } from "next/font/google";
-import { BreadcrumbProvider } from "hooks";
+import { BreadcrumbProvider } from "@/hooks";
 import type { Metadata } from "next";
 import "./styles.css";
 

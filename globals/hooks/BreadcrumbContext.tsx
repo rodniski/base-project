@@ -1,5 +1,5 @@
-'use client'
-import { createContext, useContext, useState, ReactNode } from "react";
+"use client";
+import { createContext, useContext, useState, ReactNode, useEffect } from "react";
 
 type BreadcrumbItem = {
   label: string;
@@ -17,7 +17,14 @@ const BreadcrumbContext = createContext<BreadcrumbContextType | undefined>(
 );
 
 export function BreadcrumbProvider({ children }: { children: ReactNode }) {
-  const [breadcrumbs, setBreadcrumbs] = useState<BreadcrumbItem[]>([]);
+  const [breadcrumbs, setBreadcrumbs] = useState<BreadcrumbItem[]>([
+    { label: "Carregando...", href: "#" },
+  ]);
+
+  useEffect(() => {
+    console.log("Breadcrumbs atualizados no contexto:", breadcrumbs);
+  }, [breadcrumbs]);
+
   return (
     <BreadcrumbContext.Provider value={{ breadcrumbs, setBreadcrumbs }}>
       {children}
@@ -25,8 +32,13 @@ export function BreadcrumbProvider({ children }: { children: ReactNode }) {
   );
 }
 
+
 export function useBreadcrumb() {
   const context = useContext(BreadcrumbContext);
+
+  // Log para verificar se o contexto está sendo usado corretamente
+  console.log("useBreadcrumb chamado. Contexto:", context);
+
   if (!context) {
     throw new Error("useBreadcrumb deve ser usado dentro de um BreadcrumbProvider");
   }

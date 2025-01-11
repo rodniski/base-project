@@ -19,8 +19,8 @@
     ],
     "paths": {
       "@/*": ["./globals/*"],
-      "hooks": ["./globals/hooks"],
-      "hooks/*": ["./globals/hooks/*"],
+      "hooks": ["globals/hooks"],
+      "hooks/*": ["globals/hooks/*"],
       "lib": ["./globals/lib"],
       "lib/*": ["./globals/lib/*"],
       "stores": ["./globals/stores"],
