@@ -26,8 +26,7 @@ export default function Home() {
       <div className="text-center max-w-2xl">
         <h1 className="text-4xl font-bold mb-4">Bem-vindo ao SystemWiser</h1>
         <p className="text-lg text-muted-foreground">
-          Uma solução inteligente para gestão eficiente de processos e
-          acompanhamento em tempo real. O futuro da eficiência começa aqui.
+          Este é o modelo oficial de NextJS + Shadcn/UI da System Wiser.
         </p>
       </div>
 
